@@ -1,51 +1,219 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
+body {
+    background-color: #181220;
+    color: white;
 }
-header{
-    background-color: #0C0512;
-    padding: 10px 20px;
+
+/* Header fixo */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    background-color: #10091E;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
-nav{
+
+nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
-.menu{
+
+nav img{
+    height: 6rem;
+}
+
+nav ul {
     display: flex;
-    font-size: 27px;
-}
-.menu li{
     list-style: none;
-    margin: 30px;
+    gap: 36px;
+    margin-left: 30px;
+    margin-right: 78rem;
 }
-.menu a{
+
+nav li{
+    font-size:24px;
+}
+
+nav ul li a {
+    color: white;
     text-decoration: none;
 }
-.menu li span{
-    transition: all 0.3s;
-}
-.menu li:hover{
-    transition: all 0.3s;
-    position: relative;
-    cursor: pointer;
-}
-.login-btn{
-    background-color: #9400d3;
-    color: whitesmoke;
+
+.login-btn {
+    background-color: #9400FF;
+    color: white;
+    padding: 15px 25px;
     border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-size: 22px;
     cursor: pointer;
-    font-weight: bold;
+    font-size: 20px;
+    border-radius: 10px;
 }
-.login-btn:hover {
-    background-color: #A020F0;
+
+/* Barra de pesquisa e navegação */
+#descobrir {
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    margin-top: 8rem;
 }
-body{
-    background-color: #1A1220;
-    color: whitesmoke;
+
+#descobrir input {
+    background-color: #2C213A;
+    border: none;
+    padding: 12px;
+    width: 400px;
+    border-radius: 16px;
+    color: white;
+    margin-right: -2rem;
+}
+
+#descobrir ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+#descobrir ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-left: 24.5rem; /* Mantém a margem existente */
+    margin-right: 2rem; /* Mantém a margem existente */
+}
+
+.search-container input {
+    background-color: #2C213A;
+    border: none;
+    padding: 12px;
+    width: 400px;
+    border-radius: 16px 0 0 16px; /* Cantos arredondados apenas à esquerda */
+    color: white;
+}
+
+.search-container .search-button {
+    background-color: #2C213A; /* Cor de fundo igual à barra */
+    border: none;
+    cursor: pointer;
+    border-radius: 0 16px 16px 0; /* Cantos arredondados apenas à direita */
+    padding-right: 8px;
+}
+
+.search-container img {
+    width: 20px; /* Tamanho do ícone da lupa */
+    height: 20px; /* Tamanho do ícone da lupa */
+}
+
+/* Carrossel */
+#carrosel {
+    display: flex;
+    align-items: center;
+    gap: 42px;
+    padding: 20px 40px;
+    margin-left: 22rem;
+}
+
+.lista_carrosel ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.lista_carrosel ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 14px;
+}
+
+.lista_carrosel ul li img {
+    width: 56px;
+    height: 70px;
+    border-radius: 5px;
+}
+
+/*Mais vendidos*/
+.mais_vendidos{
+    margin-top: 7rem;
+    margin-left: 22rem;
+    margin-bottom: 3rem;
+    font-size: 30px;
+}
+
+.mais_vendidos li{
+    list-style: none;
+}
+
+.vendidos {
+    margin-left: 10rem; /* Continue usando essa margem se necessário */
+    display: flex;  /* Mude para display: flex */
+    flex-direction: row;  /* Mude para row para alinhar em linha */
+    gap: 30px; /* Espaçamento entre os itens */
+}
+
+.vendidos nav ul {
+    display: flex;  /* Mantenha isso para deixar os itens em linha */
+    gap: 20px;  /* Espaçamento entre os itens */
+    list-style: none;
+    padding-bottom: 10px;
+}
+
+.vendidos nav ul li {
+    background-color: black; /* Fundo preto para os cartões */
+    padding: 10px; /* Espaçamento interno */
+    border-radius: 15px; /* Cantos arredondados */
+    text-align: center; /* Centraliza o texto */
+    color: white; /* Cor do texto */
+    flex: 1;  /* Isso faz com que os itens cresçam igualmente se desejado */
+    margin-bottom: 3rem;
+}
+
+.vendidos h3{
+    margin-top: 22px;
+    margin-bottom: 25px;
+}
+
+.vendidos h4{
+    margin-bottom: 10px;
+}
+
+/* Certifique-se de que as imagens e textos ainda se encaixem bem */
+.vendidos nav ul li img {
+    width: 200px;  /* Ajuste a largura conforme necessário */
+    height: 250px; /* Ajuste a altura se necessário */
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #10091E;
+}
+
+footer h5{
+    margin-top: 10px;
+}
+
+footer a img {
+    width: 40px;
+    margin-top: 30px;
+    margin-right: 40px;
+    margin-bottom: 5px;
+    
 }
