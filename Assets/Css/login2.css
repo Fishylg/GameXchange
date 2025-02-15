@@ -1,0 +1,43 @@
+/* Reset de estilo para garantir que todos os navegadores renderizem de maneira semelhante */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to bottom, #000000, #6a1b9a);
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    padding: 50px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border: 3px solid #8e24aa;
+}
+
+.logo img {
+    width: 100%;
+    margin: -20px 0 -10px;
+    /* Ajuste combinado */
+}
+
+h2 {
+    color: white;
+    margin-bottom: 35px;
+}
+
+h5{
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+
