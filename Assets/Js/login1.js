@@ -4,12 +4,12 @@ function togglePassword() {
     const eyeOpen = document.getElementById('eye-open');
 
     if (passwordInput.type === 'password') {
-        passwordInput.type = 'text'; // Torna a senha visível
-        eyeClosed.style.display = 'none'; // Esconde o olho fechado
-        eyeOpen.style.display = 'inline'; // Exibe o olho aberto
+        passwordInput.type = 'text';
+        eyeClosed.style.display = 'none';
+        eyeOpen.style.display = 'inline';
     } else {
-        passwordInput.type = 'password'; // Oculta a senha
-        eyeClosed.style.display = 'inline'; // Exibe o olho fechado
-        eyeOpen.style.display = 'none'; // Esconde o olho aberto
+        passwordInput.type = 'password';
+        eyeClosed.style.display = 'inline';
+        eyeOpen.style.display = 'none';
     }
 }

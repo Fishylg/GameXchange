@@ -156,8 +156,10 @@ nav ul li a {
     font-size: 30px;
 }
 
-.mais_vendidos li{
-    list-style: none;
+.mais_vendidos li a{
+    color: #ccc;
+    text-decoration: none;
+    list-style-type: none;
 }
 
 .vendidos {
