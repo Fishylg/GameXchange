@@ -1,22 +1,30 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameXchange</title>
-    <link rel="stylesheet" href="./Assets/Css/login2.css"> <!-- Usando o mesmo CSS do login1 -->
+    <title>GameXchange - Criar Conta</title>
+    <link rel="stylesheet" href="./Assets/Css/login2.css">
     <script src="./Assets/Js/login2.js"></script>
 </head>
 <body>
-    <main>
-        <div class="login-container">
-            <div class="logo"><img src="Assets/Img/Logo.png" alt="Logo"></div>
+    <div class="login2-container">
+        <div class="form-box">
+            <img src="./Assets/Img/Logo.png" alt="GameXchange" class="logo">
             <h2>Criar conta</h2>
-            
-            <button class="btn-login">Continuar</button>
-            
-            <p>Já tem uma conta? <a href="login1.html">Entrar</a></p>
+            <p>Insira sua data de nascimento</p>
+            <div class="dob-inputs">
+                <select id="dia">
+                    <option>Dia</option>
+                </select>
+                <select id="mes">
+                    <option>Mês</option>
+                </select>
+                <input type="text" id="ano" placeholder="Ano">
+            </div>
+            <button id="continuar">Continuar</button>
+            <p class="login-text">Já tem uma conta? <a href="login1.html" class="Registrar">Entrar</a>
         </div>
-    </main>
+    </div>
 </body>
 </html>
