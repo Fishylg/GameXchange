@@ -1,0 +1,188 @@
+@import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #000000, #6a1b9a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 16px;
+}
+
+.form-container {
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    padding: 32px;
+    border-radius: 8px;
+    border: 2px solid #8e24aa;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto 16px;
+    width: 600px;
+    height: 200px;
+    margin-top: -50px;
+    margin-bottom: -60px;
+    margin-left: 4px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 16px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #8e24aa;
+    border-radius: 10px;
+    background: transparent;
+    color: #ccc;
+    transition: border-color 0.3s;
+}
+
+input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #8e24aa;
+    border-radius: 10px;
+    background: transparent;
+    color: #ccc;
+    transition: border-color 0.3s;
+}
+
+.password-input {
+    position: relative;
+}
+
+.password-input input {
+    border: 2px solid #8e24aa;
+    height: 60px;
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    background: transparent;
+    color: #ccc;
+    transition: border-color 0.3s;
+}
+
+.input-group.flex {
+    display: flex;
+    gap: 16px;
+}
+
+.input-field.half {
+    width: calc(50% - 8px);
+}
+
+.relative {
+    position: relative;
+    color: black;
+}
+
+.icon {
+    position: absolute;
+    right: 12px;
+    top: 22px;
+    color: #6b7280;
+    cursor: pointer;
+}
+
+.tooltip {
+    display: none; /* Inicialmente oculto */
+    position: absolute;
+    bottom: 30px; /* Ajuste a posição conforme necessário */
+    left: 95%;
+    bottom: 40px;
+    transform: translateX(-50%);
+    background-color: #8e24aa;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.icon:hover + .tooltip {
+    display: block; /* Exibe o texto quando o mouse passa por cima do ícone */
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.checkbox {
+    accent-color: #8e24aa;
+    cursor: pointer;
+
+}
+
+.checkbox-text {
+    margin-left: 8px;
+    font-size: 14px;
+}
+
+.link {
+    color: #8e24aa;
+    text-decoration: underline;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #8e24aa;
+    border-radius: 4px;
+    color: #ffffff;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.footer-text {
+    font-size: 14px;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 37px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+button:hover {
+    background: #7b1fa2;
+}

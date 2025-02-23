@@ -4,7 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     font-weight: bold;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 body {
@@ -15,7 +15,7 @@ body {
     height: 100vh;
 }
 
-.login1-container {
+.logado-container {
     background-color: rgba(0, 0, 0, 0.8);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
@@ -30,57 +30,25 @@ body {
 .logo img {
     width: 300px;
     margin-top: -70px;
-    margin-bottom: -28px;
+    margin-bottom: 50px;
 }
 
 h2 {
     color: white;
-    margin-bottom: 50px;
+    margin-bottom: 5px;
 }
 
-.input {
-    margin-bottom: 10px;
-    /* Ajuste para espaço consistente */
-}
-
-input[type="email"],
-input[type="password"] {
-    width: 100%;
-    height: 60px;
-    padding: 15px;
-    border: 2px solid #8e24aa;
-    border-radius: 10px;
-    background: transparent;
-    color: #ccc;
-    transition: border-color 0.3s;
+h3 {
+    color: white;
     font-size: 15px;
+    margin-bottom: 60px;
 }
 
-input::placeholder {
-    color: #ccc;
-}
-
-.password-input {
-    position: relative;
-}
-
-.password-input input {
-    border: 2px solid #8e24aa;
-    height: 60px;
-    width: 100%;
-    padding: 15px;
-    border-radius: 10px;
-    background: transparent;
-    color: #ccc;
-    transition: border-color 0.3s;
-}
-
-.eye-icon {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
+h4 {
+    color: white;
+    font-size: 15px;
+    margin-bottom: 5px;
+    margin-top: 10px;
 }
 
 .btn-login {
@@ -98,12 +66,6 @@ input::placeholder {
 
 .btn-login:hover {
     background-color: #8e24aa;
-}
-
-p {
-    color: white;
-    margin-top: 40px;
-    margin-bottom: 25px;
 }
 
 a {

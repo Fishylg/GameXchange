@@ -28,7 +28,7 @@ main{
     margin-top: 10rem;
 }
 
-.opcoes1 {
+.opcoes {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -37,11 +37,11 @@ main{
     margin-left: 8px;
 }
  
-.opcoes1 img {
+.opcoes img {
     height: 90px; /* Definindo uma altura para o logo */
 }
  
-.opcoes1 ul {
+.opcoes ul {
     display: flex;
     list-style: none;
     margin: 0;
@@ -49,12 +49,12 @@ main{
     margin-left: 35px
 }
  
-.opcoes1 li {
+.opcoes li {
     margin: 0 15px; /* Espaço entre os itens do menu */
     margin-left: 10px;
 }
  
-.opcoes1 a {
+.opcoes a {
     color: white !important;
     text-decoration: none !important;
     font-weight: bold;
@@ -63,11 +63,11 @@ main{
     transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
  
-.opcoes1 a:hover {
+.opcoes a:hover {
     transform: translateY(-3px);
 }
  
-.opcoes1 a::after {
+.opcoes a::after {
     content: "";
     position: absolute;
     width: 0;
@@ -78,7 +78,7 @@ main{
     transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
 }
  
-.opcoes1 a:hover::after {
+.opcoes a:hover::after {
     width: 100%;
     left: 0;
 }
