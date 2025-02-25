@@ -27,6 +27,16 @@ header {
 main{
     margin-top: 10rem;
 }
+nav.opcoes{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.barra{
+    padding-bottom: 40px;
+}
 
 .opcoes {
     list-style: none;
@@ -92,10 +102,30 @@ main{
     font-size: 20px;
     border-radius: 10px;
     transition: background-color 0.3s ease;
-    margin-left: 980px;
+    margin-left: auto;
 }
  
 .login-btn:hover {
     background-color: #7d68f1;
 }
 
+#barra{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.photo{
+    display: block;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+#descricao{
+    margin-right: 800px;
+}
+
+#infos{
+    display: flex;
+    
+}
