@@ -8,7 +8,7 @@
  
 body {
     background-color: #181220;
-    color: white;
+    color: whitesmoke;
 }
  
 /* Header fixo */
@@ -65,7 +65,7 @@ nav.opcoes{
 }
  
 .opcoes a {
-    color: white !important;
+    color: whitesmoke !important;
     text-decoration: none !important;
     font-weight: bold;
     font-size: 20px;
@@ -95,7 +95,7 @@ nav.opcoes{
  
 .login-btn {
     background-color: #9400FF;
-    color: white;
+    color: whitesmoke;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
@@ -127,5 +127,88 @@ nav.opcoes{
 
 #infos{
     display: flex;
+    margin-right: 30px;
+    margin-left: 30px;
+    flex-direction: row;  
+    justify-content: space-between; 
+}
+.palavras{
+    flex: 1;
+    padding-right: 20px;
+}
+
+.comprar ul{
+    list-style-type: none;
     
+}
+.comprar li{
+    margin-bottom: 30px;
+}
+.comprar a{
+    background-color: #460079;
+    border: 2px solid black;
+    color: whitesmoke;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    width: 100%;
+}
+
+.comprar a:hover{
+    transition: 0.3s ease;
+    background-color: #6300aa;
+}
+
+.vendidos {
+    margin-left: 7rem;
+    display: flex;
+    gap: 30px;
+    align-items: flex-start !important;
+}
+ 
+.vendidos nav ul {
+    display: flex;  
+    gap: 20px;  
+    list-style: none;
+    padding-bottom: 10px;
+    list-style-type: none;
+    text-align:center;
+}
+ 
+.vendidos nav ul li {
+    background-color: black;
+    padding: 4px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    flex: 1;
+    margin-bottom: 3rem;
+}
+ 
+.vendidos nav ul li a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: white;
+    height: 100%;
+}
+ 
+.vendidos nav ul li img {
+    width: 200px;  
+    height: 250px;
+    border-radius: 15px 15px 0 0;
+}
+ 
+.vendidos h3{
+    margin-top: 22px;
+    margin-bottom: 25px;
+    font-size: 18px;
+}
+
+.vendidos h4{
+    margin-top: 14px;
+    margin-bottom: 25px;
+    font-size: 20px;
 }
