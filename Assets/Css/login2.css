@@ -59,6 +59,11 @@ p {
     position: relative;
     gap: 9px;
     padding: 20px;
+    align-items: center;
+}
+
+.dob-inputs{a
+    align-items: center;
 }
 
 .dob-inputs select,
