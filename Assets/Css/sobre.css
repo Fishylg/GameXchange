@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+ 
+body {
+    background-color: #181220;
+    color: whitesmoke;
+}
+ 
+/* Header fixo */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Adicionando um pouco de padding */
+    background-color: #10091E;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav.opcoes{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.opcoes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center; /* Alinhando verticalmente */
+    margin-left: 8px;
+}
+ 
+.opcoes img {
+    height: 90px; /* Definindo uma altura para o logo */
+}
+ 
+.opcoes ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 35px
+}
+ 
+.opcoes li {
+    margin: 0 15px; /* Espaço entre os itens do menu */
+    margin-left: 10px;
+}
+ 
+.opcoes a {
+    color: whitesmoke !important;
+    text-decoration: none !important;
+    font-weight: bold;
+    font-size: 20px;
+    position: relative;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+ 
+.opcoes a:hover {
+    transform: translateY(-3px);
+}
+ 
+.opcoes a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #7d68f1;
+    bottom: -5px;
+    left: 50%;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+ 
+.opcoes a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+ 
+.login-btn {
+    background-color: #9400FF;
+    color: whitesmoke;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    margin-left: auto;
+}
+ 
+.login-btn:hover {
+    background-color: #7d68f1;
+}
+
+/* HEADER ACIMA, PADRÃO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+#barra{
+    margin: 100px;
+    color: white;
+}
+
+.barra{
+    color: white !important;
+}
+
+.historia{
+    border-radius: 20px;
+    margin: 0px 30px 0px 30px;
+    padding: 0px 10px 0px 10px;
+    background-color: #4c2d8a;
+    display: block;
+    justify-content: center;
+    text-align: center;
+}
