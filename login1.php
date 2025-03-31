@@ -1,38 +1,83 @@
+<?php
+session_start(); // Iniciar a sessão
 
+// Configurações do banco de dados
+$dsn = 'mysql:dbname=bd_gamexchange;host=localhost';
+$user = 'root';
+$password = '';
 
-    <!DOCTYPE html>
-    <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>GameXchange</title>
-        <link rel="stylesheet" href="./Assets/Css/login1.css">
-        <script src="./Assets/Js/login1.js"></script>
-    </head>
-    <body>
-        <main>
-            <div class="login1-container">
-                <div class="logo"><img src="Assets/Img/Logo.png" alt="Logo"></div>
-                <h2>Entrar</h2>
-                
+$erro = ""; // Variável para armazenar mensagens de erro
+
+try {
+    // Conectar ao banco de dados
+    $banco = new PDO($dsn, $user, $password);
+} catch (PDOException $e) {
+    echo "Erro de conexão: " . $e->getMessage();
+    exit;
+}
+
+// Verificar se o formulário foi enviado
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
+
+    // Preparar a consulta para verificar o usuário e a senha
+    $select = 'SELECT * FROM tb_usuario WHERE email = :email AND senha = :senha';
+    $stmt = $banco->prepare($select);
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':senha', $senha);
+    $stmt->execute();
+
+    // Verificar se a consulta retornou um resultado
+    $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($usuario) {
+        // Se o login for bem-sucedido, armazena os dados do usuário na sessão
+        $_SESSION['usuario_id'] = $usuario['id'];
+        $_SESSION['usuario_nome_perfil'] = $usuario['nome_perfil'];
+        $_SESSION['usuario_nome_real'] = $usuario['nome_real'];
+        $_SESSION['usuario_email'] = $usuario['email'];
+        $_SESSION['usuario_tipo'] = $usuario['tipo']; // Adicionando o tipo (admin ou comum)
+
+        // Redireciona o usuário para a página principal (ou outra página de sua escolha)
+        header("Location: index.php");
+        exit;
+    } else {
+        // Caso as credenciais estejam erradas, exibe uma mensagem
+        $erro = "Email ou senha incorretos!";
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameXchange</title>
+    <link rel="stylesheet" href="./Assets/Css/login1.css">
+    <script src="./Assets/Js/login1.js"></script>
+</head>
+<body>
+    <main>
+        <div class="login1-container">
+            <div class="logo"><img src="Assets/Img/Logo.png" alt="Logo"></div>
+            <h2>Entrar</h2>
+            <form action="login1.php" method="POST">
                 <div class="input">
-                    <input type="email" placeholder="Endereço de e-mail" required>
+                    <input type="email" name="email" placeholder="Endereço de e-mail" required>
                 </div>
-                
                 <div class="input password-input">
-                    <input type="password" placeholder="Senha" id="password" required>
+                    <input type="password" name="senha" placeholder="Senha" id="password" required>
                     <span class="mostrar_senha" onclick="togglePassword()">
                         <img id="eye" src="Assets/Img/olhoFechado.png" alt="Olho fechado" class="eye-icon">
                         <img id="eye-open" src="Assets/Img/olhoAberto.png" alt="Olho aberto" class="eye-icon" style="display: none;">
                     </span>
                 </div>
-                
-                <button class="btn-login" onclick="window.location.href='index.html'">Entrar</button>
-                
+                <button type="submit" class="btn-login">Entrar</button>
                 <p>ou</p>
-        
-                <a href="login2.html" class="Registrar">Registre-se</a>
-            </div>
-        </main>
-    </body>
-    </html>
+                <a href="login2.php" class="Registrar">Registre-se</a>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

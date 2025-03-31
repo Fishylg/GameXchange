@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Obrigado pela escolha!</title>
-    <link rel="stylesheet" href="Assets/Css/finalizar-venda.css">
-    <link rel="shortcut icon" href="Assets/Img/Logo.png" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
-</head>
+<?php
+include "./Assets/php/header.php";
+?>
 <body>
     <section id="principal">
         <img src="Assets/Img/Logo.png" alt="Logo" class="logo">
@@ -49,6 +40,20 @@
     </section>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!--
                )    (   |
                )    (  /    .-

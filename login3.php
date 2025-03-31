@@ -1,9 +1,61 @@
+<?php
+session_start();
+$dsn = 'mysql:dbname=bd_gamexchange;host=localhost';
+$user = 'root';
+$password = '';
+
+try {
+    $banco = new PDO($dsn, $user, $password);
+    $banco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $email = trim($_POST['email']);
+        $nome_real = trim($_POST['nome_real']) . ' ' . trim($_POST['sobrenome']); // Junta Nome + Sobrenome
+        $nome_perfil = trim($_POST['nome_perfil']);
+        $senha = $_POST['senha']; // Senha sem hash
+        $data_nascimento = $_SESSION['data_nascimento'] ?? null;
+
+        if (!$data_nascimento) {
+            die("Erro: Data de nascimento não encontrada. Volte para a página anterior.");
+        }
+
+        $check_email = $banco->prepare("SELECT email FROM tb_usuario WHERE email = :email");
+        $check_email->bindParam(':email', $email);
+        $check_email->execute();
+        if ($check_email->rowCount() > 0) {
+            die("Erro: Este e-mail já está cadastrado.");
+        }
+
+        $sql = "INSERT INTO tb_usuario (email, nome_perfil, nome_real, senha, data_nascimento, qtd_jogos, tipo) 
+                VALUES (:email, :nome_perfil, :nome_real, :senha, :data_nascimento, 0, 'comum')";
+        $stmt = $banco->prepare($sql);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':nome_perfil', $nome_perfil);
+        $stmt->bindParam(':nome_real', $nome_real);
+        $stmt->bindParam(':senha', $senha);
+        $stmt->bindParam(':data_nascimento', $data_nascimento);
+
+        if ($stmt->execute()) {
+            $_SESSION['email'] = $email;
+            $_SESSION['nome_perfil'] = $nome_perfil;
+            $_SESSION['tipo'] = 'comum';
+
+            header("Location: logado.php");
+            exit();
+        } else {
+            echo "Erro ao criar conta.";
+        }
+    }
+} catch (PDOException $e) {
+    echo "Erro de conexão: " . $e->getMessage();
+}
+?>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gameXchange - Criar conta</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="./Assets/Css/login3.css">
     <script src="./Assets/Js/login3.js"></script>
 </head>
@@ -14,47 +66,38 @@
                 <img src="./Assets/Img/Logo.png" alt="gameXchange logo" class="logo">
             </div>
             <h2 class="subtitle">Criar conta</h2>
-            <form>
+            <form method="POST">
                 <div class="input-group">
-                    <input type="email" placeholder="Endereço de e-mail" class="input-field">
+                    <input type="email" name="email" placeholder="Endereço de e-mail" class="input-field" required>
                 </div>
                 <div class="input-group flex">
-                    <input type="text" placeholder="Nome" class="input-field half">
-                    <input type="text" placeholder="Sobrenome" class="input-field half">
+                    <input type="text" name="nome_real" placeholder="Nome" class="input-field half" required>
+                    <input type="text" name="sobrenome" placeholder="Sobrenome" class="input-field half" required>
                 </div>
                 <div class="input-group relative">
-                    <input type="text" placeholder="Nome de exibição" class="input-field">
-                    <i class="fas fa-info-circle icon"></i>
-                    <div class="tooltip">O seu nome de exibição deve conter <br> mais de 3 caracteres. Não poderá <br> conter caracteres especiais.</div>
+                    <input type="text" name="nome_perfil" placeholder="Nome de exibição" class="input-field" required>
                 </div>
                 <div class="input password-input">
-                    <input type="password" placeholder="Criar senha" id="password" required>
-                    <i class="fas fa-info-circle icon"></i>
-                    <div class="tooltip">As senhas devem conter mais de <br> 5 caracteres com pelo menos 1 <br> numero e caracter especial.</div>
-                    <span class="mostrar_senha" onclick="togglePassword()">
-                        <img id="eye" src="Assets/Img/olhoFechado.png" alt="Olho fechado" class="eye-icon">
-                        <img id="eye-open" src="Assets/Img/olhoAberto.png" alt="Olho aberto" class="eye-icon" style="display: none;">
-                    </span>
+                    <input type="password" name="senha" placeholder="Criar senha" id="password" required>
                 </div>
                 <div class="input-group">
                     <label class="checkbox-container">
-                        <input type="checkbox" class="checkbox">
+                        <input type="checkbox" required>
                         <span class="checkbox-text">Confirmo que li e aceito os <a href="#" class="link">Termos de serviço</a>.</span>
                     </label>
                 </div>
                 <div class="input-group">
                     <label class="checkbox-container">
-                        <input type="checkbox" class="checkbox">
-                        <span class="checkbox-text">Enviem-me notícias, pesquisas e ofertas especiais da GameXchange (opcional)</span>
+                        <input type="checkbox">
+                        <span class="checkbox-text">Receber novidades e ofertas da GameXchange (opcional)</span>
                     </label>
                 </div>
-                <button type="submit" class="submit-button" onclick="window.location.href='logado.php'">Continuar</button>
+                <button type="submit" class="submit-button">Continuar</button>
             </form>
             <div class="text-center mt-6">
                 <p class="footer-text">Já tem uma conta? <a href="./login1.php" class="link">Entrar</a></p>
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>

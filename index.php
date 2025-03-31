@@ -1,3 +1,13 @@
+<?php
+$dsn = 'mysql:dbname=bd_gamexchange;host=localhost';
+$user = 'root';
+$password = '';
+
+$banco = new PDO($dsn, $user, $password);
+    
+$select = 'SELECT * FROM tb_jogos';
+$resultado = $banco->query($select)->fetchALL();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,7 +17,17 @@
     <link rel="stylesheet" href="Assets/Css/style.css">
 </head>
 <body>
-    <?php include('Assets/php/header.php'); ?>
+    <header>
+        <img src="Assets/Img/Logo.png" alt="Logo GameXchange">
+        <nav class="opcoes1">
+            <ul>
+                <li><a href="./store.php">Store</a></li>
+                <li><a href="./sobre.php">Sobre</a></li>
+                <li><a href="./suporte.php">Suporte</a></li>
+            </ul>
+            <button class="login-btn" onclick="window.location.href='login1.php'">Entrar</button>
+        </nav>
+    </header>
     <main>
         <section id="descobrir">
             <div class="search-container">
@@ -41,45 +61,7 @@
             </ul>
         </section>
         <section class="vendidos">
-            <nav>
-                <ul class="vendidos">
-                    <li>
-                        <a href="vendas.html">
-                            <img src="./Assets/Img/mv_gtav.png" alt="Grand Theft Auto V">
-                            <h3>Grand Theft Auto V</h3>
-                            <h4>R$ 64,99</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="vendas.html">
-                            <img src="./Assets/Img/mv_gtav.png" alt="Grand Theft Auto V">
-                            <h3>Grand Theft Auto V</h3>
-                            <h4>R$ 64,99</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="vendas.html">
-                            <img src="./Assets/Img/mv_sr.png" alt="Smuggler's Run">
-                            <h3>Smuggler’s Run</h3>
-                            <h4>R$ 34,99</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="vendas.html">
-                            <img src="./Assets/Img/mv_cs2.png" alt="Counter Strike 2">
-                            <h3>Counter Strike 2</h3>
-                            <h4>R$ 65,99</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="vendas.html">
-                            <img src="./Assets/Img/mv_rdr2.png" alt="Red Dead Redemption">
-                            <h3>Red Dead Redemption</h3>
-                            <h4>R$ 159,99</h4>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+            <?php include './Assets/php/vendidos.php'; ?>
         </section>
     </main>
     <footer>
