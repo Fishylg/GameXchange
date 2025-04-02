@@ -1,12 +1,23 @@
 <?php
+session_start();
 $dsn = 'mysql:dbname=bd_gamexchange;host=localhost';
 $user = 'root';
 $password = '';
 
 $banco = new PDO($dsn, $user, $password);
-    
+
 $select = 'SELECT * FROM tb_jogos';
-$resultado = $banco->query($select)->fetchALL();
+$resultado = $banco->query($select)->fetchAll();
+
+// Verifica se o usuário está logado
+$usuario_logado = isset($_SESSION['nome_perfil']) ? $_SESSION['nome_perfil'] : null;
+
+// Se o botão "Sair" for pressionado, faz logout
+if (isset($_GET['logout'])) {
+    session_destroy();
+    header("Location: index.php");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -25,7 +36,14 @@ $resultado = $banco->query($select)->fetchALL();
                 <li><a href="./sobre.php">Sobre</a></li>
                 <li><a href="./suporte.php">Suporte</a></li>
             </ul>
-            <button class="login-btn" onclick="window.location.href='login1.php'">Entrar</button>
+            <?php if ($usuario_logado): ?>
+                <div class="user-menu">
+                    <span class="welcome-text">Olá, <?php echo htmlspecialchars($usuario_logado); ?>!</span>
+                    <button class="logout-btn" onclick="window.location.href='index.php?logout=true'">Sair</button>
+                </div>
+            <?php else: ?>
+                <button class="login-btn" onclick="window.location.href='login1.php'">Entrar</button>
+            <?php endif; ?>
         </nav>
     </header>
     <main>
@@ -65,7 +83,7 @@ $resultado = $banco->query($select)->fetchALL();
         </section>
     </main>
     <footer>
-        <h5>© 2024, GameXchange, Inc. Todos os direitos reservados. Xchange, GameX, o logotipo da GameXchange são marcas comerciais ou registradas da GameXchange, Inc. nos Estados Unidos da América e em outros lugares. Outras marcas e nomes de produtos são marcas registradas de seus respectivos donos.   Nossos sites podem conter links para outros sites e recursos fornecidos por terceiros. Esses links são fornecidos apenas para a sua conveniência. A GameXchange não tem controle sobre o conteúdo desses sites ou recursos e não aceita nenhuma responsabilidade por eles ou por qualquer perda ou dano que possa resultar de seu uso.  </h5>
+        <h5>© 2024, GameXchange, Inc. Todos os direitos reservados...</h5>
         <a href="https://www.facebook.com/"><img src="Assets/Img/fbIcon.png" alt="Facebook"></a>
         <a href="https://www.x.com/"><img src="Assets/Img/xIcon.png" alt="Twitter"></a>
         <a href="https://www.youtube.com/"><img src="Assets/Img/ytIcon.png" alt="Youtube"></a>
