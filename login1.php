@@ -23,13 +23,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Preparar a consulta para verificar o usuário e a senha
     $select = 'SELECT * FROM tb_usuario WHERE email = :email AND senha = :senha';
-    $stmt = $banco->prepare($select);
-    $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':senha', $senha);
-    $stmt->execute();
+    $dados = $banco->prepare($select);
+    $dados->bindParam(':email', $email);
+    $dados->bindParam(':senha', $senha);
+    $dados->execute();
 
     // Verificar se a consulta retornou um resultado
-    $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+    $usuario = $dados->fetch(PDO::FETCH_ASSOC);
 
     if ($usuario) {
         // Se o login for bem-sucedido, armazena os dados do usuário na sessão

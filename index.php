@@ -1,23 +1,22 @@
 <?php
 session_start();
+var_dump($_SESSION);
+
 $dsn = 'mysql:dbname=bd_gamexchange;host=localhost';
 $user = 'root';
 $password = '';
 
-$banco = new PDO($dsn, $user, $password);
+try {
+    $banco = new PDO($dsn, $user, $password);
+} catch (PDOException $e) {
+    die("Erro de conexão: " . $e->getMessage());
+}
 
 $select = 'SELECT * FROM tb_jogos';
 $resultado = $banco->query($select)->fetchAll();
 
 // Verifica se o usuário está logado
-$usuario_logado = isset($_SESSION['nome_perfil']) ? $_SESSION['nome_perfil'] : null;
-
-// Se o botão "Sair" for pressionado, faz logout
-if (isset($_GET['logout'])) {
-    session_destroy();
-    header("Location: index.php");
-    exit();
-}
+$usuario_logado = isset($_SESSION['usuario_nome_perfil']) ? $_SESSION['usuario_nome_perfil'] : null;
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -36,14 +35,14 @@ if (isset($_GET['logout'])) {
                 <li><a href="./sobre.php">Sobre</a></li>
                 <li><a href="./suporte.php">Suporte</a></li>
             </ul>
-            <?php if ($usuario_logado): ?>
-                <div class="user-menu">
-                    <span class="welcome-text">Olá, <?php echo htmlspecialchars($usuario_logado); ?>!</span>
-                    <button class="logout-btn" onclick="window.location.href='index.php?logout=true'">Sair</button>
-                </div>
-            <?php else: ?>
-                <button class="login-btn" onclick="window.location.href='login1.php'">Entrar</button>
-            <?php endif; ?>
+            <div class="user-menu">
+                <?php if ($usuario_logado): ?>
+                    <span class="user-text">Olá, <?php echo htmlspecialchars($usuario_logado); ?></span>
+                    <a href="logout.php" class="btn-login logout-btn">Sair</a>
+                <?php else: ?>
+                    <a href="login1.php" class="btn-login">Entrar</a>
+                <?php endif; ?>
+            </div>
         </nav>
     </header>
     <main>
