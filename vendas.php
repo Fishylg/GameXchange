@@ -1,4 +1,5 @@
 <?php
+session_start();
 $dsn = 'mysql:dbname=bd_gamexchange;host=localhost';
 $user = 'root';
 $password = '';
@@ -13,6 +14,7 @@ if (isset($_GET['id'])) {
     $dados->execute();
     $resultado = $dados->fetchAll();
 } 
+$usuario_logado = isset($_SESSION['usuario_nome_perfil']) ? $_SESSION['usuario_nome_perfil'] : null;
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -28,39 +30,42 @@ if (isset($_GET['id'])) {
 </head>
 <body>
     <header>
-        <nav class="opcoes">
-            <img src="Assets/Img/Logo.png" alt="Logo GameXchange">
+        <nav class="opcoes1">
             <ul>
-                <li><a href="index.php">Store</a></li>
-                <li><a href="sobre.php">Sobre</a></li>
-                <li><a href="#">Suporte</a></li>
+                <li><a href="./index.php">Store</a></li>
+                <li><a href="./sobre.php">Sobre</a></li>
+                <li><a href="./suporte.php">Suporte</a></li>
             </ul>
-            <button class="login-btn" onclick="window.location.href='login1.html'">Entrar</button>
+            <div class="user-menu">
+                <?php if ($usuario_logado): ?>
+                    <span class="user-text">Olá, <?php echo htmlspecialchars($usuario_logado); ?></span>
+                    <a href="logout.php" class="btn-login logout-btn">Sair</a>
+                <?php else: ?>
+                    <a href="login1.php" class="btn-login">Entrar</a>
+                <?php endif; ?>
+            </div>
         </nav>
     </header>
     <main>
         <?php foreach($resultado as $lista) { ?> 
         <h1 class="a" style="font-size: 60px; font-weight: bold; padding-left: 30px;"><?= $lista ['nome'] ?></h1>
         <br>
-        <h1 class="a" style="padding-left: 30px;"><?= $lista ['nota'] ?>/100</h1>
+        <h1 class="a" style="padding-left: 30px;"><?= $lista['nota'] ?>/100</h1>
         <?php } ?>
         <section class="imagens-principais">
             <div class="main-wrapper">
                 <div class="main-image">
-                    <img alt="Close-up of a person's eyes with a serious expression, partially covered by a black mask. Text: Smuggler's Run"
+                    <img alt="foto"
                         class="main-image-img"
-                        src="https://storage.googleapis.com/a1aa/image/MeWbDh5X8Zu49NdzjGCFR8djAI78sSAl9rxak8wVzb8.jpg" />
+                        src="./Assets/Img/vendas/<?= $lista['foto0']?>" />
                 </div>
                 <div class="grid-images">
-                    <img alt="Off-road vehicle driving through a desert landscape with mountains in the background"
-                        class="grid-image"
-                        src="https://storage.googleapis.com/a1aa/image/rEqznnCggsME4fP6V-ufCpbVabYuvN-F4AphhXyFvC0.jpg" />
-                    <img alt="Two off-road vehicles parked in front of a house in a rural area" class="grid-image"
-                        src="https://storage.googleapis.com/a1aa/image/9F1pY9-UAIXLZrKKRSgm3pDEM5SCPMX-wtAkorDNMnQ.jpg" />
-                    <img alt="Off-road vehicle driving through a canyon with rocky walls" class="grid-image"
-                        src="https://storage.googleapis.com/a1aa/image/y6_ptbUaDplie_yfdAjutSyxS4dxgrNGcfZ7JAEUnnA.jpg" />
-                    <img alt="Off-road vehicle driving up a steep hill in a desert landscape" class="grid-image"
-                        src="https://storage.googleapis.com/a1aa/image/47hF0ZXqZHw_RXmt8ahtO6WYtu7ZLCHJnzlTp4hGER4.jpg" />
+                    <?php foreach($resultado as $lista) { ?> 
+                    <img alt="foto1" class="grid-image" src="./Assets/Img/vendas/<?= $lista['foto1'] ?>" />
+                    <img alt="foto2" class="grid-image" src="./Assets/Img/vendas/<?= $lista['foto2'] ?>" />
+                    <img alt="foto3" class="grid-image" src="./Assets/Img/vendas/<?= $lista['foto3'] ?>" />
+                    <img alt="foto4" class="grid-image" src="./Assets/Img/vendas/<?= $lista['foto4'] ?>" />
+                    <?php } ?>
                 </div>
             </div>
             <?php foreach($resultado as $lista) { ?> 
@@ -70,9 +75,9 @@ if (isset($_GET['id'])) {
         <section class="comprar">
             <ul>
                 <li>
-                    <a href="login1.html">Comprar agora</a>
-                    <a href="login1.html">Colocar no carrinho</a>
-                    <a href="login1.html">Lista de desejos</a>
+                    <a href="login1.php">Comprar agora</a>
+                    <a href="login1.php">Colocar no carrinho</a>
+                    <a href="login1.php">Lista de desejos</a>
                 </li>
             </ul>
         </section>
@@ -91,7 +96,7 @@ if (isset($_GET['id'])) {
         <div class="container">
             <div class="carousel-wrapper">
                 <h3 style="font-size: large; font-weight: bolder; padding-top: 25px; padding-bottom: 15px;">Você também
-                    pode gostar PHP</h3>
+                    pode gostar</h3>
                 <?php foreach($resultado as $lista) { ?> 
                 <div class="carousel" id="carousel">
                     <div class="carousel-item">

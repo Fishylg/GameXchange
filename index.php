@@ -31,7 +31,7 @@ $usuario_logado = isset($_SESSION['usuario_nome_perfil']) ? $_SESSION['usuario_n
         <img src="Assets/Img/Logo.png" alt="Logo GameXchange">
         <nav class="opcoes1">
             <ul>
-                <li><a href="./store.php">Store</a></li>
+                <li><a href="./index.php">Store</a></li>
                 <li><a href="./sobre.php">Sobre</a></li>
                 <li><a href="./suporte.php">Suporte</a></li>
             </ul>
@@ -54,25 +54,18 @@ $usuario_logado = isset($_SESSION['usuario_nome_perfil']) ? $_SESSION['usuario_n
                 </button>
             </div>
             <ul>
-                <li><a href="#">Descobrir</a></li>
-                <li><a href="#">Navegar</a></li>
-                <li><a href="#">Novidades</a></li>
+                <li><a href="#mais_vendidos">Mais vendidos</a></li>
+                <li><a href="#">Escolhas do editor</a></li>
+                <li><a href="#">Lançamentos</a></li>
             </ul>
         </section>
         <section id="carrosel">
             <img src="Assets/Img/Banner_GOW.png" alt="Banner God Of War: Ragnarok">
             <div class="lista_carrosel">
-                <ul>
-                    <li><img src="Assets/Img/icon_dc.png" alt="Dead Cells">Dead Cells</li>
-                    <li><img src="Assets/Img/icon_dg.png" alt="Days Gone">Days Gone</li>
-                    <li><img src="Assets/Img/icon_fg.png" alt="Fall Guys">Fall Guys</li>
-                    <li><img src="Assets/Img/icon_fm7.png" alt="Forza Motorsport 7">Forza Motorsport 7</li>
-                    <li><img src="Assets/Img/icon_mc.png" alt="Minecraft">Minecraft</li>
-                    <li><img src="Assets/Img/icon_fn.png" alt="Fortnite">Fortnite</li>
-                </ul>
+                <?php include './Assets/php/lista_produtos.php'; ?>
             </div>
         </section>
-        <section class="mais_vendidos">
+        <section id="mais_vendidos">
             <ul>
                 <li><a href="#">Mais vendidos</a></li>
             </ul>

@@ -6,7 +6,7 @@ $dsn = 'mysql:dbname=bd_gamexchange;host=localhost';
 $user = 'root';
 $password = '';
 
-$erro = ""; // Variável para armazenar mensagens de erro
+$erro = "";
 
 try {
     // Conectar ao banco de dados
@@ -39,11 +39,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['usuario_email'] = $usuario['email'];
         $_SESSION['usuario_tipo'] = $usuario['tipo']; // Adicionando o tipo (admin ou comum)
 
-        // Redireciona o usuário para a página principal (ou outra página de sua escolha)
+        // Redireciona o usuário para a página principal
         header("Location: index.php");
         exit;
     } else {
-        // Caso as credenciais estejam erradas, exibe uma mensagem
+        // Caso as senhas estejam erradas, exibe uma mensagem
         $erro = "Email ou senha incorretos!";
     }
 }

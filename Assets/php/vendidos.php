@@ -13,7 +13,7 @@ $resultado = $banco->query($select)->fetchAll();
         <?php foreach($resultado as $lista) { ?> 
         <li>
             <a href="vendas.php?id=<?= $lista['id'] ?>"> <!-- Adicionando o id na URL -->
-                <img src="./Assets/Img/banners/<?= $lista['foto'] ?>"> 
+                <img src="./Assets/Img/banners/<?= $lista['foto0'] ?>"> 
                 <h3><?= $lista['nome'] ?></h3>
                 <h4>R$ <?= number_format($lista['preco'], 2, ',', '.') ?></h4>
             </a>
