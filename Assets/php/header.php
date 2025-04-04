@@ -1,4 +1,4 @@
-<header>
+    <header>
         <img src="Assets/Img/Logo.png" alt="Logo GameXchange">
         <nav class="opcoes1">
             <ul>
@@ -8,8 +8,8 @@
             </ul>
             <div class="user-menu">
                 <?php if ($usuario_logado): ?>
-                    <span class="user-text">Olá, <?php echo htmlspecialchars($usuario_logado); ?></span>
-                    <a href="logout.php" class="btn-login logout-btn">Sair</a>
+                    <span class="user-text">Olá, <?php echo ($usuario_logado); ?></span>
+                    <a href="./Assets/php/logout.php" class="btn-login logout-btn">Sair</a>
                 <?php else: ?>
                     <a href="login1.php" class="btn-login">Entrar</a>
                 <?php endif; ?>
