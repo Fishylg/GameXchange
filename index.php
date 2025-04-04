@@ -51,8 +51,8 @@ $usuario_logado = isset($_SESSION['usuario_nome_perfil']) ? $_SESSION['usuario_n
             </div>
             <ul>
                 <li><a href="#mais_vendidos">Mais vendidos</a></li>
-                <li><a href="#">Escolhas do editor</a></li>
-                <li><a href="#">Lançamentos</a></li>
+                <li><a href="#escolhas_Do_Editor">Escolhas do editor</a></li>
+                <li><a href="#lancamentos">Lançamentos</a></li>
             </ul>
         </section>
         <section id="carrosel">
@@ -68,6 +68,26 @@ $usuario_logado = isset($_SESSION['usuario_nome_perfil']) ? $_SESSION['usuario_n
         </section>
         <section class="vendidos">
             <?php include './Assets/php/vendidos.php'; ?>
+        </section>
+
+
+        <section id="escolhas_Do_Editor">
+            <ul>
+                <li><a href="#">Escolhas Do Editor</a></li>
+            </ul>
+        </section>
+        <section class="escolhasDoEditor">
+            <?php include './Assets/php/escolhasDoEditor.php'; ?>
+        </section>
+
+
+        <section id="lancamentos">
+            <ul>
+                <li><a href="#">Lançamentos</a></li>
+            </ul>
+        </section>
+        <section class="lancamentos">
+            <?php include './Assets/php/lancamentos.php'; ?>
         </section>
     </main>
     <footer>
