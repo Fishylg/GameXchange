@@ -12,7 +12,7 @@ try {
         $email = trim($_POST['email']);
         $nome_real = trim($_POST['nome_real']) . ' ' . trim($_POST['sobrenome']); // Junta Nome + Sobrenome
         $nome_perfil = trim($_POST['nome_perfil']);
-        $senha = $_POST['senha']; // Senha sem hash
+        $senha = $_POST['senha'];
         $data_nascimento = $_SESSION['data_nascimento'] ?? null;
 
         if (!$data_nascimento) {

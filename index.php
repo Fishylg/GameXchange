@@ -6,11 +6,7 @@ $dsn = 'mysql:dbname=bd_gamexchange;host=localhost';
 $user = 'root';
 $password = '';
 
-try {
-    $banco = new PDO($dsn, $user, $password);
-} catch (PDOException $e) {
-    die("Erro de conexão: " . $e->getMessage());
-}
+$banco = new PDO($dsn, $user, $password);
 
 $select = 'SELECT * FROM tb_jogos';
 $resultado = $banco->query($select)->fetchAll();
