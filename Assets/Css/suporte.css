@@ -137,22 +137,56 @@ nav ul li a {
     text-decoration: none;
 }
 
-/* Rodapé */
-footer {
-    text-align: center;
+/* Ajuste no main */
+main {
+    margin-top: 10rem;
+}
+
+/* Estilizando APENAS o formulário do suporte */
+main.suporte .form-suporte {
+    background-color: #242038;
     padding: 20px;
-    background-color: #10091E;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
 }
 
-footer h5{
+/* Ajustes nos inputs */
+main.suporte .form-suporte label {
+    font-size: 18px;
     margin-top: 10px;
+    color: white;
 }
 
-footer a img {
-    width: 40px;
-    margin-top: 30px;
-    margin-right: 40px;
-    margin-bottom: 5px;
+main.suporte .form-suporte input,
+main.suporte .form-suporte textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 2px solid #7d68f1;
+    border-radius: 5px;
+    background-color: #1d1b29;
+    color: white;
+    font-size: 16px;
+}
 
-    
+/* Botão */
+main.suporte .form-suporte button {
+    background-color: #9400FF;
+    color: white;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 8px;
+    margin-top: 15px;
+    width: 100%;
+    transition: background-color 0.3s ease-in-out;
+}
+
+main.suporte .form-suporte button:hover {
+    background-color: #7d68f1;
 }
