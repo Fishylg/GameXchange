@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #000000, #6a1b9a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login2-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-box {
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    padding-right: 30px;
+    padding-left: 30px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    width: 335px;
+    height: 600px;
+    border: 3px solid #8e24aa;
+    position: relative;
+    margin-top: -5rem;
+}
+
+.logo {
+    width: 300px;
+    margin-top: -20px;
+    margin-bottom: -50px;
+    margin-left: 4px;
+    /* Ajuste combinado */
+}
+
+h2 {
+    margin-bottom: 2rem;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+.dob-inputs {
+    display: flex;
+    /* Mantém os campos lado a lado */
+    justify-content: space-between;
+    /* Espaçamento entre os campos */
+    margin-bottom: 20px;
+    position: relative;
+    gap: 9px;
+    padding: 20px;
+    align-items: center;
+}
+
+.dob-inputs{
+    align-items: center;
+}
+
+.dob-inputs select,
+.dob-inputs input {
+    width: 40%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 1px solid #8e24aa;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    position: relative;
+    z-index: 10;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+select:focus {
+    outline: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+button {
+    width: 19.4rem;
+    height: 3.5rem;
+    padding: 10px;
+    background: #8e24aa;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 3.5rem;
+
+}
+
+button:hover {
+    background: #7b1fa2;
+}
+
+.login-text {
+    margin-top: 15px;
+}
+
+.login-text a {
+    color: #8e24aa;
+    text-decoration: underline;
+}
+
+.login-login2-container {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    padding: 50px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border: 3px solid #8e24aa;
+}
