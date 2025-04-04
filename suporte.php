@@ -22,10 +22,14 @@ $usuario_logado = isset($_SESSION['usuario_nome_perfil']) ? $_SESSION['usuario_n
     <link rel="stylesheet" href="./Assets/Css/suporte.css">
 </head>
 <body>
-    <?= include './Assets/php/header.php'; ?>
-    <main>
-        <div class="barra" style="padding-bottom: 40px;"></div>
-        <form action="POST">
+    <?php include './Assets/php/header.php'; ?>
+    
+    <main class="suporte"> 
+        <div style="display: flex; justify-content: center; padding-bottom: 40px;">
+            <h1>Encontrou algum problema? Nos conte para podermos concertar o mais rápido o possivel!!</h1>
+        </div>
+        <div class="barra"></div>
+        <form action="./Assets/php/form_suporte.php" method="POST" class="form-suporte">
             <label for="titulo">Título:</label>
             <input type="text" id="titulo" name="titulo" required>
             
