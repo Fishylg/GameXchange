@@ -8,7 +8,7 @@ $banco = new PDO($dsn, $user, $password);
 
 if (isset($_GET['id'])) {
     $id = (int) $_GET['id']; 
-    $select = 'SELECT * FROM tb_jogos WHERE id = :id'; 
+    $select = 'SELECT * FROM tb_jogos WHERE id_jogos = :id'; 
     $dados = $banco->prepare($select);
     $dados->bindParam(':id', $id, PDO::PARAM_INT);
     $dados->execute();
