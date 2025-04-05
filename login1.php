@@ -1,6 +1,11 @@
 <?php
 session_start(); // Iniciar a sessão
 
+if (isset($_SESSION['usuario_id'])) { // Se o usuário tentar entrar mesmo logado, ele é redirecionado de volta pro index.php
+    header("Location: index.php");
+    exit;
+}
+
 // Configurações do banco de dados
 $dsn = 'mysql:dbname=bd_gamexchange;host=localhost';
 $user = 'root';
@@ -33,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($usuario) {
         // Se o login for bem-sucedido, armazena os dados do usuário na sessão
-        $_SESSION['usuario_id'] = $usuario['id'];
+        $_SESSION['usuario_id'] = $usuario['id_usuario'];
         $_SESSION['usuario_nome_perfil'] = $usuario['nome_perfil'];
         $_SESSION['usuario_nome_real'] = $usuario['nome_real'];
         $_SESSION['usuario_email'] = $usuario['email'];
@@ -55,6 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GameXchange</title>
     <link rel="stylesheet" href="./Assets/Css/login1.css">
+    <link rel=’shortcut icon’ href=’favicon.ico’ type=’image/x-icon’ />
     <script src="./Assets/Js/login1.js"></script>
 </head>
 <body>

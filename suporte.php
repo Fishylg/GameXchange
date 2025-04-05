@@ -20,6 +20,7 @@ $usuario_logado = isset($_SESSION['usuario_nome_perfil']) ? $_SESSION['usuario_n
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suporte</title>
     <link rel="stylesheet" href="./Assets/Css/suporte.css">
+    <link rel=’shortcut icon’ href=’favicon.ico’ type=’image/x-icon’ />
 </head>
 <body>
     <?php include './Assets/php/header.php'; ?>

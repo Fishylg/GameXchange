@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+if (isset($_SESSION['usuario_id'])) { // Se o usuário tentar entrar mesmo logado, ele é redirecionado de volta pro index.php
+    header("Location: index.php");
+    exit;
+}
+
 $dsn = 'mysql:dbname=bd_gamexchange;host=localhost';
 $user = 'root';
 $password = '';
@@ -40,6 +46,7 @@ try {
             $_SESSION['nome_perfil'] = $nome_perfil;
             $_SESSION['tipo'] = 'comum';
 
+            $_SESSION['recem_cadastrado'] = true;
             header("Location: logado.php");
             exit();
         } else {
@@ -57,6 +64,7 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gameXchange - Criar conta</title>
     <link rel="stylesheet" href="./Assets/Css/login3.css">
+    <link rel=’shortcut icon’ href=’favicon.ico’ type=’image/x-icon’ />
     <script src="./Assets/Js/login3.js"></script>
 </head>
 <body>

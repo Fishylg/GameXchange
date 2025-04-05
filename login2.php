@@ -1,6 +1,12 @@
 <?php
 session_start();
-$erro = ""; // Variável para armazenar mensagens de erro
+
+if (isset($_SESSION['usuario_id'])) { // Se o usuário tentar entrar mesmo logado, ele é redirecionado de volta pro index.php
+    header("Location: index.php");
+    exit;
+}
+
+$erro = ""; // Variável para armazenar mensagens de erro, vai por mim, ele ajuda!!!
 
 // Se o formulário for enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -37,6 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GameXchange - Criar Conta</title>
     <link rel="stylesheet" href="./Assets/Css/login2.css">
+    <link rel=’shortcut icon’ href=’favicon.ico’ type=’image/x-icon’ />
 </head>
 <body>
     <div class="login2-container">
