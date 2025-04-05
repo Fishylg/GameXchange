@@ -58,7 +58,7 @@ $usuario_logado = isset($_SESSION['usuario_nome_perfil']) ? $_SESSION['usuario_n
         <h1 class="a" style="font-size: 60px; font-weight: bold; padding-left: 30px;"><?= htmlspecialchars($jogo['nome']) ?></h1>
         <br>
         <h1 class="a" style="padding-left: 30px;"><?= htmlspecialchars($jogo['nota']) ?>/100</h1>
-
+        <h6 style="font-weight:300; font-size: 20px; font-weight: bold; padding-top: 90px;">Data de lançamento: <?= $lista ['data_lancamento'] ?></h6>
         <section class="imagens-principais">
             <div class="main-wrapper">
                 <div class="main-image">
