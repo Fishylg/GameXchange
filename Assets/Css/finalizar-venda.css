@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lalezar", system-ui;
+}
+
+body {
+    background-color: #28003a;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#principal {
+    width: 400px;
+    background: #d9d9d9;
+    border: 1px solid #c8c8c8;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.logo {
+    width: 150px;
+    margin: 20px auto 10px;
+    display: block;
+}
+
+.barra {
+    height: 5px;
+    background-color: #6402AE;
+}
+
+.itens {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.itens h1 {
+    font-size: 36px;
+    text-shadow: 0 4px 4px rgba(0,0,0,0.25);
+    margin-bottom: 20px;
+}
+
+.logo_game {
+    width: 150px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.nome-jogo {
+    text-decoration: underline;
+    color: #424242;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.precos {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.precos ul {
+    list-style: none;
+}
+
+.promocional {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 1px solid #c8c8c8;
+    margin-bottom: 20px;
+}
+
+.barra2 {
+    width: 100%;
+    height: 2px;
+    background-color: #c8c8c8;
+    margin: 20px 0;
+}
+
+.email {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.email label {
+    font-size: 14px;
+    color: #333;
+}
+
+.comprar_btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.comprar_btn button {
+    width: 48%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.confirmar {
+    background-color: green;
+}
+
+.confirmar:hover {
+    background-color: darkgreen;
+}
+
+.cancelar {
+    background-color: crimson;
+}
+
+.cancelar:hover {
+    background-color: darkred;
+}

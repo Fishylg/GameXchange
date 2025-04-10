@@ -1,0 +1,21 @@
+
+/* HEADER ACIMA, PADRÃO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+#barra{
+    margin: 100px;
+    color: white;
+}
+
+.barra{
+    color: white !important;
+}
+
+.historia{
+    border-radius: 20px;
+    margin: 0px 30px 0px 30px;
+    padding: 0px 10px 0px 10px;
+    background-color: #4c2d8a;
+    display: block;
+    justify-content: center;
+    text-align: center;
+}

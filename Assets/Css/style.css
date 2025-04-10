@@ -1,0 +1,490 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+html {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #181220;
+    color: white;
+}
+
+/* Header fixo */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    /* Adicionando um pouco de padding */
+    background-color: #10091E;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+main {
+    margin-top: 10rem;
+}
+
+.opcoes1 {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    /* Alinhando verticalmente */
+    margin-left: 8px;
+    margin-right: 5rem;
+}
+
+.opcoes1 img {
+    height: 90px;
+    /* Definindo uma altura para o logo */
+}
+
+.opcoes1 ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-right: 25rem;
+
+}
+
+.opcoes1 li {
+    margin: 0 15px;
+    /* Espaço entre os itens do menu */
+    margin-left: 10px;
+
+}
+
+.opcoes1 a {
+    color: white !important;
+    text-decoration: none !important;
+    font-weight: bold;
+    font-size: 10x;
+    position: relative;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.opcoes1 a:hover {
+    transform: translateY(-3px);
+}
+
+.lista_produtos {
+    background-color: tomato;
+
+}
+
+.opcoes1 a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #7d68f1;
+    bottom: -5px;
+    left: 50%;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.opcoes1 a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+
+.login-btn {
+    background-color: #9400FF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    margin-left: 850px;
+}
+
+.login-btn:hover {
+    background-color: #7d68f1;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav img {
+    height: 6rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 36px;
+    margin-left: 30px;
+    margin-right: 78rem;
+}
+
+nav li {
+    font-size: 24px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Barra de pesquisa e navegação */
+#descobrir {
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    margin-top: 8rem;
+    margin-left: -8.2rem;
+}
+
+#descobrir input {
+    background-color: #2C213A;
+    border: none;
+    padding: 12px;
+    width: 400px;
+    border-radius: 16px;
+    color: white;
+    margin-right: -2rem;
+}
+
+#descobrir ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+#descobrir ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-left: 24.5rem;
+    /* Mantém a margem existente */
+    margin-right: 2rem;
+    /* Mantém a margem existente */
+}
+
+.search-container input {
+    background-color: #2C213A;
+    border: none;
+    padding: 12px;
+    width: 400px;
+    border-radius: 16px 0 0 16px;
+    /* Cantos arredondados apenas à esquerda */
+    color: white;
+}
+
+.search-container .search-button {
+    background-color: #2C213A;
+    /* Cor de fundo igual à barra */
+    border: none;
+    cursor: pointer;
+    border-radius: 0 16px 16px 0;
+    /* Cantos arredondados apenas à direita */
+    padding-right: 8px;
+}
+
+.search-container img {
+    width: 20px;
+    /* Tamanho do ícone da lupa */
+    height: 20px;
+    /* Tamanho do ícone da lupa */
+}
+
+/* Carrossel */
+#carrosel {
+    display: flex;
+    align-items: center;
+    gap: 42px;
+    padding: 20px 40px;
+    margin-left: 14rem;
+}
+
+.lista_carrosel ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.lista_carrosel ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 14px;
+}
+
+.lista_carrosel ul li a {
+    text-decoration: none; 
+    color: white;
+    display: flex;
+    gap: 10px;
+}
+
+
+.lista_carrosel ul li img {
+    width: 56px;
+    height: 70px;
+    border-radius: 5px;
+}
+
+/*Mais vendidos*/
+#mais_vendidos {
+    margin-top: 7rem;
+    margin-left: 14rem;
+    margin-bottom: 2rem;
+    font-size: 30px;
+}
+
+#mais_vendidos ul {
+    text-decoration: none;
+    list-style: none;
+}
+
+#mais_vendidos li a {
+    color: #f5f5f5;
+    text-decoration: none;
+}
+
+.vendidos {
+    margin-left: 7rem;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.vendidos nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding-bottom: 10px;
+    list-style-type: none;
+    text-align: center;
+}
+
+.vendidos nav ul li {
+    background-color: black;
+    padding: 4px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    flex: 1;
+    margin-bottom: 3rem;
+}
+
+.vendidos nav ul li a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: white;
+    height: 100%;
+}
+
+.vendidos nav ul li img {
+    width: 200px;
+    height: 250px;
+    border-radius: 15px 15px 0 0;
+}
+
+.vendidos h3 {
+    margin-top: 22px;
+    margin-bottom: 25px;
+    font-size: 18px;
+}
+
+.vendidos h4 {
+    margin-top: 14px;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+#escolhas_Do_Editor {
+    margin-top: 7rem;
+    margin-left: 14rem;
+    margin-bottom: 2rem;
+    font-size: 30px;
+}
+
+#escolhas_Do_Editor ul {
+    text-decoration: none;
+    list-style: none;
+}
+
+#escolhas_Do_Editor li a {
+    color: #f5f5f5;
+    text-decoration: none;
+}
+
+.escolhasDoEditor {
+    margin-left: 7rem;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.escolhasDoEditor nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding-bottom: 10px;
+    list-style-type: none;
+    text-align: center;
+}
+
+.escolhasDoEditor nav ul li {
+    background-color: black;
+    padding: 4px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    flex: 1;
+    margin-bottom: 3rem;
+}
+
+.escolhasDoEditor nav ul li a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: white;
+    height: 100%;
+}
+
+.escolhasDoEditor nav ul li img {
+    width: 200px;
+    height: 250px;
+    border-radius: 15px 15px 0 0;
+}
+
+.escolhasDoEditor h3 {
+    margin-top: 22px;
+    margin-bottom: 25px;
+    font-size: 18px;
+}
+
+.escolhasDoEditor h4 {
+    margin-top: 14px;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+#lancamentos {
+    margin-top: 7rem;
+    margin-left: 14rem;
+    margin-bottom: 2rem;
+    font-size: 30px;
+}
+
+#lancamentos ul {
+    text-decoration: none;
+    list-style: none;
+}
+
+#lancamentos li a {
+    color: #f5f5f5;
+    text-decoration: none;
+}
+
+.lancamentos {
+    margin-left: 7rem;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.lancamentos nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding-bottom: 10px;
+    list-style-type: none;
+    text-align: center;
+}
+
+.lancamentos nav ul li {
+    background-color: black;
+    padding: 4px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    flex: 1;
+    margin-bottom: 3rem;
+}
+
+.lancamentos nav ul li a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: white;
+    height: 100%;
+}
+
+.lancamentos nav ul li img {
+    width: 200px;
+    height: 250px;
+    border-radius: 15px 15px 0 0;
+}
+
+.lancamentos h3 {
+    margin-top: 22px;
+    margin-bottom: 25px;
+    font-size: 18px;
+}
+
+.lancamentos h4 {
+    margin-top: 14px;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #10091E;
+}
+
+footer h5 {
+    margin-top: 10px;
+}
+
+footer a img {
+    width: 40px;
+    margin-top: 30px;
+    margin-right: 40px;
+    margin-bottom: 5px;
+
+
+}
+
+.lista_resultados {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+

@@ -1,0 +1,216 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+body {
+    background-color: #1b132b; 
+    color: whitesmoke;
+}
+
+.opcoes1 a {
+    color: white !important;
+    text-decoration: none !important;
+    font-weight: bold;
+    font-size: 25x !important;
+    position: relative;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+
+/* Seção de imagens */
+.imagens-principais {
+    max-width: 1200px;
+    margin: 3rem auto 5rem auto;
+    padding: 1rem;
+}
+/* Adicione isso ao seu arquivo CSS */
+.btn-adicionar {
+    border: 2px solid black;
+    font-size: 16px;
+    background-color: #6300aa;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+    width: 372px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s; /* Transição suave */
+}
+
+.btn-adicionar:hover {
+    background-color: #48156d; /* Cor ao passar o mouse */
+}
+.imagens-principais h4 {
+    margin-top: 2rem;
+    margin-bottom: -3rem;
+    color: green;
+    text-align: center;
+}
+
+.main-wrapper {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.main-image {
+    flex: 2;
+    margin-right: -7rem;
+    margin-left: 3rem;
+}
+
+.main-image-img {
+    width: 500px;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+.grid-images {
+    display: flex;
+    flex: 3;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.grid-images img {
+    height: 240px;
+    width: 240px;
+    border-radius: 0.5rem;
+}
+
+/* Seção comprar */
+.comprar {
+    display: flex;
+    justify-content: center;
+    margin: 3rem auto;
+    text-align: center;
+}
+
+.comprar ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.comprar li {
+    margin-bottom: 10px;
+}
+
+.comprar a {
+    background-color: #6300aa;
+    border: none;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+    width: 372px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.comprar a:hover {
+    background-color: #48156d;
+}
+
+.comprar h4 {
+    display: flex;
+    align-items: center;
+    width: 372px;
+    height: 37px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Descrição */
+#infos {
+    display: flex;
+    justify-content: center;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+#infos .palavras {
+    max-width: 900px;
+    text-align: left;
+}
+
+/* Carrossel */
+
+.carousel {
+    display: flex;
+    gap: 2.5rem;
+    overflow-x: auto;
+    padding: 1.5rem 1rem;
+    scroll-snap-type: x mandatory;
+    justify-content: center;
+}
+
+.carousel-item {
+    background-color: #2c1e4a;
+    border-radius: 10px;
+    padding: 10px;
+    min-width: 200px;
+    text-align: center;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.carousel-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.carousel-item p {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 0.5rem;
+}
+
+.carousel-item:hover {
+    transform: scale(1.07);
+    background-color: #5a3b8c;
+}
+
+/* Scrollbar do carrossel */
+.carousel::-webkit-scrollbar {
+    height: 10px;
+}
+
+.carousel::-webkit-scrollbar-thumb {
+    background: #7b3ce1;
+    border-radius: 10px;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #10091E;
+}
+
+footer h5 {
+    margin-top: 10px;
+}
+
+footer a img {
+    width: 40px;
+    margin-top: 30px;
+    margin-right: 40px;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    }
+
+body, html {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #181220;
+    color: white;
+}
+
+/* Header fixo */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Adicionando um pouco de padding */
+    background-color: #10091E;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+main{
+    margin-top: 10rem;
+}
+
+.opcoes1 {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center; /* Alinhando verticalmente */
+    margin-left: 8px;
+    margin-right: 5rem;
+}
+
+.opcoes1 img {
+    height: 90px; /* Definindo uma altura para o logo */
+}
+ 
+.opcoes1 ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-right: 25rem;
+    
+}
+ 
+.opcoes1 li {
+    margin: 0 15px; /* Espaço entre os itens do menu */
+    margin-left: 10px;
+    
+}
+ 
+.opcoes1 a {
+    color: white !important;
+    text-decoration: none !important;
+    font-weight: bold;
+    font-size: 25x;
+    position: relative;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+ 
+.opcoes1 a:hover {
+    transform: translateY(-3px);
+}
+
+.lista_produtos {
+    background-color: tomato;
+
+}
+ 
+.opcoes1 a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #7d68f1;
+    bottom: -5px;
+    left: 50%;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+ 
+.opcoes1 a:hover::after {
+    width: 100%;
+    left: 0;
+}
+ 
+.login-btn {
+    background-color: #9400FF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    margin-left: 850px;
+}
+ 
+.login-btn:hover {
+    background-color: #7d68f1;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav img{
+    height: 6rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 36px;
+    margin-left: 30px;
+    margin-right: 78rem;
+}
+
+nav li{
+    font-size:24px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Ajuste no main */
+main {
+    margin-top: 10rem;
+}
+
+/* Estilizando APENAS o formulário do suporte */
+main.suporte .form-suporte {
+    background-color: #242038;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+/* Ajustes nos inputs */
+main.suporte .form-suporte label {
+    font-size: 18px;
+    margin-top: 10px;
+    color: white;
+}
+
+main.suporte .form-suporte input,
+main.suporte .form-suporte textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 2px solid #7d68f1;
+    border-radius: 5px;
+    background-color: #1d1b29;
+    color: white;
+    font-size: 16px;
+}
+
+/* Botão */
+main.suporte .form-suporte button {
+    background-color: #9400FF;
+    color: white;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 8px;
+    margin-top: 15px;
+    width: 100%;
+    transition: background-color 0.3s ease-in-out;
+}
+
+main.suporte .form-suporte button:hover {
+    background-color: #7d68f1;
+}
